@@ -1,0 +1,51 @@
+/* ==UserStyle==
+@name           Mercado Lindo
+@namespace      https://userstyles.world/user/JustDownloadin
+@version        0.5.0
+@description    Modificaciones estéticas para Mercado Libre
+@author         Zana
+@preprocessor 	stylus
+
+@var checkbox pandemicLogo	"Activar logo post-pandemia" 0
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.mercadolibre.com") {
+	/*Barra de navegación*/
+	.nav-header {
+		background-color: #fef055!important;
+		}
+	
+	.nav-logo {
+		background-image: url("https://files.catbox.moe/z6iw7d.png");
+		}
+	
+	if(pandemicLogo=="1") {
+		.nav-logo {
+		background-image: url("https://files.catbox.moe/zore9z.png");
+		}
+	}
+	.nav-menu-list > li:nth-of-type(4), .nav-menu-list > li:nth-of-type(5) {
+		display: none!important;
+		}
+	/*Página principal*/
+	.andes-carousel-snapped__exhibitor-wrapper.andes-carousel-snapped__hero--desktop {
+		display: none!important;
+		}
+	.dynamic-access .container {
+		margin-top: 15px!important;
+		}
+	.ui-recommendations-carousel-dual {
+		display: none!important;
+		}
+	.adn.ad_adn_video_banner, .exhibitor__picture, .loyalty-buylevel6, .partners-subscriptions {
+		display: none!important;
+		}
+	.ui-recommendations-snapped-section, .discovery, .adn.AD_ADN_area, .collections {
+		display: none!important;
+		}
+	
+	.nav-area.nav-top-area.nav-center-area {
+		width: 130%!important;
+		}
+		
+}
