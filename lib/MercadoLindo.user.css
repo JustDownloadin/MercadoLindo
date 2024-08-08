@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Mercado Lindo
 @namespace      https://userstyles.world/user/JustDownloadin
-@version        0.5.1
+@version        0.5.4
 @description    Modificaciones estéticas para Mercado Libre
 @author         Zana
 @preprocessor 	stylus
@@ -10,30 +10,75 @@
 @var checkbox pandemicLogo	"Activar logo post-pandemia" 0
 ==/UserStyle== */
 
-@-moz-document url-prefix("https://www.mercadolibre.com"), url-prefix("https://listado.mercadolibre.com"), url-prefix("https://articulo.mercadolibre.com"), url-prefix("https://play.mercadolibre.com") {
+@-moz-document url-prefix("https://www.mercadolibre.com"), url-prefix("https://listado.mercadolibre.com"), url-prefix("https://articulo.mercadolibre.com"), url-prefix("https://play.mercadolibre.com"), url-prefix("https://myaccount.mercadolibre.com") {
 	/*Barra de navegación*/
 	.nav-header {
 		background-color: #fef055!important;
+		}	
+	.nav-categs {
+		border-radius: 0!important;
 		}
-	
+	.nav-categs::before {
+		border-bottom: 14px solid #fff;
+		}
+	.nav-categs-departments {
+		background-color: #fff;
+		}
+	.nav-categs-departments__list--dynamic >a[aria-expanded="true"], .nav-categs-departments a:hover {
+		color: #fff!important;
+		transition: none;
+		}
+	.nav-categs-detail__body:focus-visible {
+		box-shadow: none!important;
+		}
+	.nav-categs-departments a, .nav-categs-departments a:link, .nav-categs-departments a:visited {
+		color: #333;
+		transition: none;
+		}
+	.nav-categs-departments .nav-categs-departments__list--dynamic a::after {
+		border-color: #333;
+		transition: none;
+		}
+	ul.nav-categs-detail__categ-list > li> a, ul.nav-categs-detail__categ-list > li> a:hover,
+ 	div.nav-categs-detail__categ > h2 > a, div.nav-categs-detail__categ > h2 > a.hover {
+		transition: none;
+		}
 	.nav-logo {
 		background-image: url("https://files.catbox.moe/z6iw7d.png");
 		}
-	
 	if(pandemicLogo=="1") {
-		.nav-logo {
-		background-image: url("https://files.catbox.moe/zore9z.png");
+			.nav-logo {
+			background-image: url("https://files.catbox.moe/zore9z.png");
+			}
 		}
-	}
 	.nav-menu-list > li:nth-of-type(4), .nav-menu-list > li:nth-of-type(5) {
 		display: none!important;
 		}
 	/*Página principal*/
+	/*Carrusel de "visto recientemente", "Tu favorito", etc*/
+	.section .section-header .ui-link, .section .section-header a, .categories-new-design .wrapper .section-header a, .navigation .view-history {
+		font-weight: normal!important;
+		}
+	.ui-recommendations-subtitle-link	.dynamic-access .container .andes-carousel-snapped__slide {
+		margin-right: 5px!important;
+		}
+	.andes-card, .categories-new-design .wrapper, .navigation .row.container {
+		border-radius: 0!important;
+		}
+	/*.andes-carousel-snapped__container--content .andes-carousel-snapped__control--next,
+	.categories-new-design .wrapper .andes-carousel-snapped__control--next {
+		right: -72px;
+		}
+	.andes-carousel-snapped__container--content .andes-carousel-snapped__control--previous,
+	.categories-new-design .wrapper .andes-carousel-snapped__control--previous {
+		left: -72px;
+		}*/
+	/*Promociones, ofertas, y otras cosas innecesarias*/
 	.andes-carousel-snapped__exhibitor-wrapper.andes-carousel-snapped__hero--desktop {
 		display: none!important;
 		}
 	.dynamic-access .container {
-		margin-top: 15px!important;
+		margin-top: 36px!important;
 		}
 	.ui-recommendations-carousel-dual {
 		display: none!important;
@@ -44,7 +89,6 @@
 	.ui-recommendations-snapped-section, .discovery, .adn.AD_ADN_area, .collections {
 		display: none!important;
 		}
-	
 	.nav-area.nav-top-area.nav-center-area {
 		width: 130%!important;
 		}
